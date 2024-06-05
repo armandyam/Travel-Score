@@ -1,0 +1,1483 @@
+{
+    "selected_cells": [
+        "9621",
+        "12332",
+        "9650",
+        "11256",
+        "11984",
+        "8970",
+        "9947",
+        "12334",
+        "11098",
+        "8435",
+        "8093",
+        "5323",
+        "11800",
+        "8902",
+        "12512",
+        "7183",
+        "9658",
+        "8723",
+        "8026",
+        "9636",
+        "12524",
+        "5680",
+        "9598",
+        "9090",
+        "7379",
+        "10203",
+        "7313",
+        "9437",
+        "9811",
+        "7353",
+        "7792",
+        "10520",
+        "8736",
+        "11263",
+        "10754",
+        "9953",
+        "8422",
+        "10411",
+        "8946",
+        "11936",
+        "3113",
+        "3888",
+        "5871",
+        "7614",
+        "8590",
+        "13387",
+        "11979",
+        "7169",
+        "7845",
+        "11841",
+        "3414",
+        "11976",
+        "6179",
+        "9806",
+        "9599",
+        "8046",
+        "9586",
+        "9503",
+        "6951",
+        "6575",
+        "5686",
+        "10376",
+        "13758",
+        "10002",
+        "5497",
+        "7014",
+        "3724",
+        "12517",
+        "12157",
+        "3151",
+        "6294",
+        "5104",
+        "9770",
+        "9263",
+        "0",
+        "6664",
+        "9059",
+        "10895",
+        "7034",
+        "8342",
+        "10741",
+        "9081",
+        "9294",
+        "6590",
+        "10734",
+        "9402",
+        "11646",
+        "13053",
+        "8961",
+        "3115",
+        "8340",
+        "11796",
+        "8606",
+        "9641",
+        "7126",
+        "8574",
+        "9804",
+        "12338",
+        "8690",
+        "10131",
+        "9505",
+        "12037",
+        "8388",
+        "11619",
+        "10050",
+        "10555",
+        "11257",
+        "8544",
+        "9821",
+        "10161",
+        "10035",
+        "9587",
+        "6711",
+        "4923",
+        "11815",
+        "13240",
+        "5942",
+        "8742",
+        "6418",
+        "9240",
+        "11973",
+        "6120",
+        "9224",
+        "11492",
+        "9111",
+        "8241",
+        "8908",
+        "10931",
+        "8193",
+        "8198",
+        "8267",
+        "10909",
+        "8156",
+        "10881",
+        "9638",
+        "3229",
+        "6665",
+        "5996",
+        "8633",
+        "2776",
+        "11312",
+        "9419",
+        "11811",
+        "8958",
+        "10727",
+        "11987",
+        "12684",
+        "6580",
+        "11989",
+        "6402",
+        "12165",
+        "7664",
+        "9837",
+        "13420",
+        "8012",
+        "11267",
+        "9239",
+        "9228",
+        "13243",
+        "9594",
+        "13057",
+        "11970",
+        "7834",
+        "8506",
+        "13776",
+        "11997"
+    ],
+    "cells_info": {
+        "9621": {
+            "countries": [
+                "Mauritania",
+                "Senegal"
+            ],
+            "population_share": 0.004,
+            "area_share": 0.005
+        },
+        "12332": {
+            "countries": [
+                "Switzerland",
+                "France"
+            ],
+            "population_share": 0.029,
+            "area_share": 0.026
+        },
+        "9650": {
+            "countries": [
+                "Eritrea",
+                "Saudi Arabia"
+            ],
+            "population_share": 0.002,
+            "area_share": 0.001
+        },
+        "11256": {
+            "countries": [
+                "Italy"
+            ],
+            "population_share": 0.0,
+            "area_share": 0.0
+        },
+        "11984": {
+            "countries": [
+                "Bulgaria",
+                "Romania"
+            ],
+            "population_share": 0.003,
+            "area_share": 0.003
+        },
+        "8970": {
+            "countries": [
+                "Philippines"
+            ],
+            "population_share": 0.0,
+            "area_share": 0.0
+        },
+        "9947": {
+            "countries": [
+                "Cuba"
+            ],
+            "population_share": 0.0,
+            "area_share": 0.001
+        },
+        "12334": {
+            "countries": [
+                "Austria",
+                "Switzerland",
+                "Germany",
+                "Italy",
+                "Liechtenstein"
+            ],
+            "population_share": 0.078,
+            "area_share": 0.025
+        },
+        "11098": {
+            "countries": [
+                "Iran"
+            ],
+            "population_share": 0.001,
+            "area_share": 0.031
+        },
+        "8435": {
+            "countries": [
+                "Palau"
+            ],
+            "population_share": 0.0,
+            "area_share": 0.0
+        },
+        "8093": {
+            "countries": [
+                "Nauru"
+            ],
+            "population_share": 0.0,
+            "area_share": 0.0
+        },
+        "5323": {
+            "countries": [
+                "Lesotho",
+                "South Africa"
+            ],
+            "population_share": 0.012,
+            "area_share": 0.032
+        },
+        "11800": {
+            "countries": [
+                "Albania",
+                "Greece",
+                "Kosovo",
+                "Macedonia"
+            ],
+            "population_share": 0.036,
+            "area_share": 0.028
+        },
+        "8902": {
+            "countries": [
+                "Guinea"
+            ],
+            "population_share": 0.0,
+            "area_share": 0.0
+        },
+        "12512": {
+            "countries": [
+                "Belgium",
+                "France",
+                "Luxembourg"
+            ],
+            "population_share": 0.027,
+            "area_share": 0.025
+        },
+        "7183": {
+            "countries": [
+                "Papua New Guinea"
+            ],
+            "population_share": 0.0,
+            "area_share": 0.0
+        },
+        "9658": {
+            "countries": [
+                "Oman"
+            ],
+            "population_share": 0.0,
+            "area_share": 0.0
+        },
+        "8723": {
+            "countries": [
+                "Sierra Leone"
+            ],
+            "population_share": 0.004,
+            "area_share": 0.005
+        },
+        "8026": {
+            "countries": [
+                "Kenya",
+                "United Republic of Tanzania",
+                "Uganda"
+            ],
+            "population_share": 0.009,
+            "area_share": 0.003
+        },
+        "9636": {
+            "countries": [
+                "Niger"
+            ],
+            "population_share": 0.0,
+            "area_share": 0.036
+        },
+        "12524": {
+            "countries": [
+                "Moldova",
+                "Ukraine"
+            ],
+            "population_share": 0.018,
+            "area_share": 0.025
+        },
+        "5680": {
+            "countries": [
+                "Botswana",
+                "South Africa"
+            ],
+            "population_share": 0.0,
+            "area_share": 0.034
+        },
+        "9598": {
+            "countries": [
+                "France",
+                "United Kingdom",
+                "Saint Kitts and Nevis",
+                "Netherlands"
+            ],
+            "population_share": 0.001,
+            "area_share": 0.0
+        },
+        "9090": {
+            "countries": [
+                "Benin",
+                "Burkina Faso",
+                "Ghana",
+                "Togo"
+            ],
+            "population_share": 0.03,
+            "area_share": 0.037
+        },
+        "7379": {
+            "countries": [
+                "Tuvalu"
+            ],
+            "population_share": 0.0,
+            "area_share": 0.0
+        },
+        "10203": {
+            "countries": [
+                "Pakistan"
+            ],
+            "population_share": 0.0,
+            "area_share": 0.0
+        },
+        "7313": {
+            "countries": [
+                "Seychelles"
+            ],
+            "population_share": 0.0,
+            "area_share": 0.0
+        },
+        "9437": {
+            "countries": [
+                "Cape Verde"
+            ],
+            "population_share": 0.001,
+            "area_share": 0.0
+        },
+        "9811": {
+            "countries": [
+                "Algeria",
+                "Mali"
+            ],
+            "population_share": 0.0,
+            "area_share": 0.036
+        },
+        "7353": {
+            "countries": [
+                "Indonesia",
+                "East Timor"
+            ],
+            "population_share": 0.003,
+            "area_share": 0.005
+        },
+        "7792": {
+            "countries": [
+                "Ecuador",
+                "Peru"
+            ],
+            "population_share": 0.0,
+            "area_share": 0.038
+        },
+        "10520": {
+            "countries": [
+                "Spain"
+            ],
+            "population_share": 0.0,
+            "area_share": 0.0
+        },
+        "8736": {
+            "countries": [
+                "Cameroon",
+                "Nigeria"
+            ],
+            "population_share": 0.008,
+            "area_share": 0.037
+        },
+        "11263": {
+            "countries": [
+                "Greece"
+            ],
+            "population_share": 0.0,
+            "area_share": 0.001
+        },
+        "10754": {
+            "countries": [
+                "Bhutan",
+                "China",
+                "India"
+            ],
+            "population_share": 0.006,
+            "area_share": 0.033
+        },
+        "9953": {
+            "countries": [
+                "The Bahamas",
+                "United Kingdom",
+                "Haiti"
+            ],
+            "population_share": 0.001,
+            "area_share": 0.001
+        },
+        "8422": {
+            "countries": [
+                "Indonesia",
+                "Malaysia"
+            ],
+            "population_share": 0.0,
+            "area_share": 0.0
+        },
+        "10411": {
+            "countries": [
+                "Japan"
+            ],
+            "population_share": 0.0,
+            "area_share": 0.0
+        },
+        "8946": {
+            "countries": [
+                "India"
+            ],
+            "population_share": 0.0,
+            "area_share": 0.0
+        },
+        "11936": {
+            "countries": [
+                "Canada"
+            ],
+            "population_share": 0.0,
+            "area_share": 0.0
+        },
+        "3113": {
+            "countries": [
+                "Chile"
+            ],
+            "population_share": 0.0,
+            "area_share": 0.001
+        },
+        "3888": {
+            "countries": [
+                "South Africa"
+            ],
+            "population_share": 0.0,
+            "area_share": 0.0
+        },
+        "5871": {
+            "countries": [
+                "Madagascar"
+            ],
+            "population_share": 0.0,
+            "area_share": 0.002
+        },
+        "7614": {
+            "countries": [
+                "Brazil",
+                "Colombia",
+                "Peru"
+            ],
+            "population_share": 0.0,
+            "area_share": 0.038
+        },
+        "8590": {
+            "countries": [
+                "Sri Lanka"
+            ],
+            "population_share": 0.005,
+            "area_share": 0.0
+        },
+        "13387": {
+            "countries": [
+                "Denmark"
+            ],
+            "population_share": 0.0,
+            "area_share": 0.0
+        },
+        "11979": {
+            "countries": [
+                "Albania",
+                "Bosnia and Herzegovina",
+                "Croatia",
+                "Montenegro",
+                "Republic of Serbia"
+            ],
+            "population_share": 0.032,
+            "area_share": 0.024
+        },
+        "7169": {
+            "countries": [
+                "Indonesia"
+            ],
+            "population_share": 0.0,
+            "area_share": 0.0
+        },
+        "7845": {
+            "countries": [
+                "Burundi",
+                "Rwanda",
+                "United Republic of Tanzania"
+            ],
+            "population_share": 0.096,
+            "area_share": 0.036
+        },
+        "11841": {
+            "countries": [
+                "China",
+                "Mongolia"
+            ],
+            "population_share": 0.0,
+            "area_share": 0.029
+        },
+        "3414": {
+            "countries": [
+                "New Zealand"
+            ],
+            "population_share": 0.0,
+            "area_share": 0.0
+        },
+        "11976": {
+            "countries": [
+                "Italy",
+                "San Marino"
+            ],
+            "population_share": 0.059,
+            "area_share": 0.024
+        },
+        "6179": {
+            "countries": [
+                "Bolivia",
+                "Paraguay"
+            ],
+            "population_share": 0.0,
+            "area_share": 0.035
+        },
+        "9806": {
+            "countries": [
+                "Mali",
+                "Mauritania"
+            ],
+            "population_share": 0.0,
+            "area_share": 0.036
+        },
+        "9599": {
+            "countries": [
+                "Antigua and Barbuda",
+                "France"
+            ],
+            "population_share": 0.007,
+            "area_share": 0.001
+        },
+        "8046": {
+            "countries": [
+                "Maldives"
+            ],
+            "population_share": 0.0,
+            "area_share": 0.0
+        },
+        "9586": {
+            "countries": [
+                "Belize",
+                "Honduras"
+            ],
+            "population_share": 0.001,
+            "area_share": 0.0
+        },
+        "9503": {
+            "countries": [
+                "Cambodia",
+                "Laos",
+                "Vietnam"
+            ],
+            "population_share": 0.015,
+            "area_share": 0.037
+        },
+        "6951": {
+            "countries": [
+                "Comoros"
+            ],
+            "population_share": 0.001,
+            "area_share": 0.0
+        },
+        "6575": {
+            "countries": [
+                "Angola",
+                "Namibia"
+            ],
+            "population_share": 0.0,
+            "area_share": 0.004
+        },
+        "5686": {
+            "countries": [
+                "Mozambique",
+                "Swaziland",
+                "South Africa"
+            ],
+            "population_share": 0.021,
+            "area_share": 0.013
+        },
+        "10376": {
+            "countries": [
+                "United Arab Emirates"
+            ],
+            "population_share": 0.0,
+            "area_share": 0.001
+        },
+        "13758": {
+            "countries": [
+                "Iceland"
+            ],
+            "population_share": 0.0,
+            "area_share": 0.0
+        },
+        "10002": {
+            "countries": [
+                "Egypt",
+                "Libya",
+                "Sudan"
+            ],
+            "population_share": 0.0,
+            "area_share": 0.035
+        },
+        "5497": {
+            "countries": [
+                "Namibia"
+            ],
+            "population_share": 0.0,
+            "area_share": 0.0
+        },
+        "7014": {
+            "countries": [
+                "Solomon Islands"
+            ],
+            "population_share": 0.0,
+            "area_share": 0.0
+        },
+        "3724": {
+            "countries": [
+                "France"
+            ],
+            "population_share": 0.0,
+            "area_share": 0.0
+        },
+        "12517": {
+            "countries": [
+                "Austria",
+                "Czech Republic"
+            ],
+            "population_share": 0.041,
+            "area_share": 0.025
+        },
+        "12157": {
+            "countries": [
+                "Bosnia and Herzegovina",
+                "Croatia",
+                "Slovenia"
+            ],
+            "population_share": 0.018,
+            "area_share": 0.02
+        },
+        "3151": {
+            "countries": [
+                "Norway"
+            ],
+            "population_share": 0.0,
+            "area_share": 0.0
+        },
+        "6294": {
+            "countries": [
+                "Vanuatu"
+            ],
+            "population_share": 0.0,
+            "area_share": 0.0
+        },
+        "5104": {
+            "countries": [
+                "Brazil"
+            ],
+            "population_share": 0.0,
+            "area_share": 0.0
+        },
+        "9770": {
+            "countries": [
+                "United Kingdom",
+                "Jamaica"
+            ],
+            "population_share": 0.002,
+            "area_share": 0.001
+        },
+        "9263": {
+            "countries": [
+                "Guinea",
+                "Gambia",
+                "Guinea Bissau",
+                "Mali",
+                "Senegal"
+            ],
+            "population_share": 0.01,
+            "area_share": 0.037
+        },
+        "0": {
+            "countries": [
+                ""
+            ],
+            "population_share": 0.0,
+            "area_share": 0.0
+        },
+        "6664": {
+            "countries": [
+                "United States of America",
+                "Samoa"
+            ],
+            "population_share": 0.001,
+            "area_share": 0.0
+        },
+        "9059": {
+            "countries": [
+                "Grenada",
+                "Trinidad and Tobago",
+                "Venezuela"
+            ],
+            "population_share": 0.02,
+            "area_share": 0.004
+        },
+        "10895": {
+            "countries": [
+                "Libya",
+                "Tunisia"
+            ],
+            "population_share": 0.001,
+            "area_share": 0.032
+        },
+        "7034": {
+            "countries": [
+                "Kiribati"
+            ],
+            "population_share": 0.0,
+            "area_share": 0.0
+        },
+        "8342": {
+            "countries": [
+                "Brazil",
+                "France",
+                "Suriname"
+            ],
+            "population_share": 0.0,
+            "area_share": 0.038
+        },
+        "10741": {
+            "countries": [
+                "Afghanistan",
+                "Iran",
+                "Pakistan"
+            ],
+            "population_share": 0.003,
+            "area_share": 0.031
+        },
+        "9081": {
+            "countries": [
+                "Guinea Bissau"
+            ],
+            "population_share": 0.001,
+            "area_share": 0.001
+        },
+        "9294": {
+            "countries": [
+                "Yemen"
+            ],
+            "population_share": 0.0,
+            "area_share": 0.0
+        },
+        "6590": {
+            "countries": [
+                "Mozambique"
+            ],
+            "population_share": 0.0,
+            "area_share": 0.0
+        },
+        "10734": {
+            "countries": [
+                "Iran",
+                "Iraq",
+                "Kuwait",
+                "Saudi Arabia"
+            ],
+            "population_share": 0.021,
+            "area_share": 0.005
+        },
+        "9402": {
+            "countries": [
+                "Mexico"
+            ],
+            "population_share": 0.0,
+            "area_share": 0.001
+        },
+        "11646": {
+            "countries": [
+                "China",
+                "Kyrgyzstan",
+                "Tajikistan"
+            ],
+            "population_share": 0.004,
+            "area_share": 0.025
+        },
+        "13053": {
+            "countries": [
+                "Germany"
+            ],
+            "population_share": 0.0,
+            "area_share": 0.0
+        },
+        "8961": {
+            "countries": [
+                "Vietnam"
+            ],
+            "population_share": 0.0,
+            "area_share": 0.0
+        },
+        "3115": {
+            "countries": [
+                "Argentina",
+                "Chile"
+            ],
+            "population_share": 0.0,
+            "area_share": 0.011
+        },
+        "8340": {
+            "countries": [
+                "Brazil",
+                "Guyana"
+            ],
+            "population_share": 0.0,
+            "area_share": 0.038
+        },
+        "11796": {
+            "countries": [
+                "Italy",
+                "Vatican"
+            ],
+            "population_share": 0.06,
+            "area_share": 0.008
+        },
+        "8606": {
+            "countries": [
+                "Brunei",
+                "Malaysia"
+            ],
+            "population_share": 0.001,
+            "area_share": 0.001
+        },
+        "9641": {
+            "countries": [
+                "Sudan",
+                "Chad"
+            ],
+            "population_share": 0.0,
+            "area_share": 0.036
+        },
+        "7126": {
+            "countries": [
+                "Malawi",
+                "Zambia"
+            ],
+            "population_share": 0.016,
+            "area_share": 0.037
+        },
+        "8574": {
+            "countries": [
+                "Somalia"
+            ],
+            "population_share": 0.0,
+            "area_share": 0.007
+        },
+        "9804": {
+            "countries": [
+                "Mauritania"
+            ],
+            "population_share": 0.0,
+            "area_share": 0.036
+        },
+        "12338": {
+            "countries": [
+                "Austria",
+                "Croatia",
+                "Hungary",
+                "Slovakia",
+                "Slovenia"
+            ],
+            "population_share": 0.043,
+            "area_share": 0.025
+        },
+        "8690": {
+            "countries": [
+                "Panama"
+            ],
+            "population_share": 0.0,
+            "area_share": 0.001
+        },
+        "10131": {
+            "countries": [
+                "The Bahamas",
+                "Cuba"
+            ],
+            "population_share": 0.0,
+            "area_share": 0.001
+        },
+        "9505": {
+            "countries": [
+                "China"
+            ],
+            "population_share": 0.0,
+            "area_share": 0.0
+        },
+        "12037": {
+            "countries": [
+                "Russia"
+            ],
+            "population_share": 0.0,
+            "area_share": 0.007
+        },
+        "8388": {
+            "countries": [
+                "Ethiopia",
+                "Kenya"
+            ],
+            "population_share": 0.002,
+            "area_share": 0.034
+        },
+        "11619": {
+            "countries": [
+                "Albania",
+                "Greece",
+                "Italy"
+            ],
+            "population_share": 0.004,
+            "area_share": 0.001
+        },
+        "10050": {
+            "countries": [
+                "Philippines",
+                "Taiwan"
+            ],
+            "population_share": 0.001,
+            "area_share": 0.0
+        },
+        "10555": {
+            "countries": [
+                "Bahrain",
+                "Iran",
+                "Qatar",
+                "Saudi Arabia"
+            ],
+            "population_share": 0.01,
+            "area_share": 0.002
+        },
+        "11257": {
+            "countries": [
+                "Malta"
+            ],
+            "population_share": 0.005,
+            "area_share": 0.0
+        },
+        "8544": {
+            "countries": [
+                "Liberia"
+            ],
+            "population_share": 0.001,
+            "area_share": 0.0
+        },
+        "9821": {
+            "countries": [
+                "Libya",
+                "Sudan",
+                "Chad"
+            ],
+            "population_share": 0.0,
+            "area_share": 0.036
+        },
+        "10161": {
+            "countries": [
+                "Morocco"
+            ],
+            "population_share": 0.0,
+            "area_share": 0.005
+        },
+        "10035": {
+            "countries": [
+                "Bangladesh"
+            ],
+            "population_share": 0.019,
+            "area_share": 0.001
+        },
+        "9587": {
+            "countries": [
+                "Honduras"
+            ],
+            "population_share": 0.0,
+            "area_share": 0.0
+        },
+        "6711": {
+            "countries": [
+                "Peru"
+            ],
+            "population_share": 0.0,
+            "area_share": 0.001
+        },
+        "4923": {
+            "countries": [
+                "Uruguay"
+            ],
+            "population_share": 0.0,
+            "area_share": 0.001
+        },
+        "11815": {
+            "countries": [
+                "Azerbaijan"
+            ],
+            "population_share": 0.008,
+            "area_share": 0.0
+        },
+        "13240": {
+            "countries": [
+                "Estonia",
+                "Lithuania",
+                "Latvia"
+            ],
+            "population_share": 0.004,
+            "area_share": 0.006
+        },
+        "5942": {
+            "countries": [
+                "Tonga"
+            ],
+            "population_share": 0.0,
+            "area_share": 0.0
+        },
+        "8742": {
+            "countries": [
+                "Central African Republic",
+                "South Sudan"
+            ],
+            "population_share": 0.0,
+            "area_share": 0.038
+        },
+        "6418": {
+            "countries": [
+                "Mauritius"
+            ],
+            "population_share": 0.0,
+            "area_share": 0.0
+        },
+        "9240": {
+            "countries": [
+                "Barbados"
+            ],
+            "population_share": 0.004,
+            "area_share": 0.0
+        },
+        "11973": {
+            "countries": [
+                "France",
+                "Italy",
+                "Monaco"
+            ],
+            "population_share": 0.027,
+            "area_share": 0.007
+        },
+        "6120": {
+            "countries": [
+                "Fiji"
+            ],
+            "population_share": 0.0,
+            "area_share": 0.0
+        },
+        "9224": {
+            "countries": [
+                "Guatemala",
+                "El Salvador"
+            ],
+            "population_share": 0.003,
+            "area_share": 0.002
+        },
+        "11492": {
+            "countries": [
+                "South Korea",
+                "North Korea"
+            ],
+            "population_share": 0.005,
+            "area_share": 0.001
+        },
+        "9111": {
+            "countries": [
+                "Djibouti",
+                "Ethiopia"
+            ],
+            "population_share": 0.017,
+            "area_share": 0.029
+        },
+        "8241": {
+            "countries": [
+                "Indonesia",
+                "Malaysia",
+                "Singapore"
+            ],
+            "population_share": 0.116,
+            "area_share": 0.022
+        },
+        "8908": {
+            "countries": [
+                "Burkina Faso",
+                "Ivory Coast",
+                "Ghana"
+            ],
+            "population_share": 0.016,
+            "area_share": 0.037
+        },
+        "10931": {
+            "countries": [
+                "China",
+                "Nepal"
+            ],
+            "population_share": 0.0,
+            "area_share": 0.031
+        },
+        "8193": {
+            "countries": [
+                "Sao Tome and Principe"
+            ],
+            "population_share": 0.002,
+            "area_share": 0.001
+        },
+        "8198": {
+            "countries": [
+                "Cameroon",
+                "Democratic Republic of the Congo",
+                "Republic of Congo"
+            ],
+            "population_share": 0.001,
+            "area_share": 0.038
+        },
+        "8267": {
+            "countries": [
+                "Federated States of Micronesia"
+            ],
+            "population_share": 0.0,
+            "area_share": 0.0
+        },
+        "10909": {
+            "countries": [
+                "Iraq",
+                "Jordan",
+                "Saudi Arabia"
+            ],
+            "population_share": 0.002,
+            "area_share": 0.032
+        },
+        "8156": {
+            "countries": [
+                "Brazil",
+                "Colombia",
+                "Venezuela"
+            ],
+            "population_share": 0.0,
+            "area_share": 0.038
+        },
+        "10881": {
+            "countries": [
+                "Portugal"
+            ],
+            "population_share": 0.0,
+            "area_share": 0.0
+        },
+        "9638": {
+            "countries": [
+                "Chad"
+            ],
+            "population_share": 0.0,
+            "area_share": 0.034
+        },
+        "3229": {
+            "countries": [
+                "Australia"
+            ],
+            "population_share": 0.0,
+            "area_share": 0.0
+        },
+        "6665": {
+            "countries": [
+                "United States of America"
+            ],
+            "population_share": 0.0,
+            "area_share": 0.0
+        },
+        "5996": {
+            "countries": [
+                "Argentina",
+                "Bolivia",
+                "Chile"
+            ],
+            "population_share": 0.0,
+            "area_share": 0.034
+        },
+        "8633": {
+            "countries": [
+                "Marshall Islands"
+            ],
+            "population_share": 0.0,
+            "area_share": 0.0
+        },
+        "2776": {
+            "countries": [
+                "United Kingdom"
+            ],
+            "population_share": 0.0,
+            "area_share": 0.0
+        },
+        "11312": {
+            "countries": [
+                "South Korea"
+            ],
+            "population_share": 0.0,
+            "area_share": 0.0
+        },
+        "9419": {
+            "countries": [
+                "Dominica",
+                "France",
+                "Saint Lucia"
+            ],
+            "population_share": 0.008,
+            "area_share": 0.002
+        },
+        "11811": {
+            "countries": [
+                "Armenia",
+                "Georgia",
+                "Turkey"
+            ],
+            "population_share": 0.024,
+            "area_share": 0.028
+        },
+        "8958": {
+            "countries": [
+                "Myanmar",
+                "Thailand"
+            ],
+            "population_share": 0.0,
+            "area_share": 0.0
+        },
+        "10727": {
+            "countries": [
+                "Egypt",
+                "Israel",
+                "Jordan",
+                "Saudi Arabia"
+            ],
+            "population_share": 0.004,
+            "area_share": 0.03
+        },
+        "11987": {
+            "countries": [
+                "Turkey"
+            ],
+            "population_share": 0.0,
+            "area_share": 0.0
+        },
+        "12684": {
+            "countries": [
+                "Ireland"
+            ],
+            "population_share": 0.0,
+            "area_share": 0.0
+        },
+        "6580": {
+            "countries": [
+                "Angola",
+                "Namibia",
+                "Zambia"
+            ],
+            "population_share": 0.001,
+            "area_share": 0.036
+        },
+        "11989": {
+            "countries": [
+                "Georgia",
+                "Russia"
+            ],
+            "population_share": 0.003,
+            "area_share": 0.002
+        },
+        "6402": {
+            "countries": [
+                "Botswana",
+                "Namibia",
+                "Zimbabwe"
+            ],
+            "population_share": 0.001,
+            "area_share": 0.036
+        },
+        "12165": {
+            "countries": [
+                "Ukraine"
+            ],
+            "population_share": 0.0,
+            "area_share": 0.0
+        },
+        "7664": {
+            "countries": [
+                "Burundi",
+                "Democratic Republic of the Congo",
+                "United Republic of Tanzania"
+            ],
+            "population_share": 0.024,
+            "area_share": 0.028
+        },
+        "9837": {
+            "countries": [
+                "Oman",
+                "Saudi Arabia"
+            ],
+            "population_share": 0.0,
+            "area_share": 0.035
+        },
+        "13420": {
+            "countries": [
+                "Estonia",
+                "Finland"
+            ],
+            "population_share": 0.0,
+            "area_share": 0.0
+        },
+        "8012": {
+            "countries": [
+                "Equatorial Guinea"
+            ],
+            "population_share": 0.0,
+            "area_share": 0.0
+        },
+        "11267": {
+            "countries": [
+                "Northern Cyprus",
+                "Cyprus",
+                "Lebanon",
+                "Syria",
+                "Turkey"
+            ],
+            "population_share": 0.023,
+            "area_share": 0.003
+        },
+        "9239": {
+            "countries": [
+                "Grenada",
+                "Saint Lucia",
+                "Saint Vincent and the Grenadines"
+            ],
+            "population_share": 0.005,
+            "area_share": 0.001
+        },
+        "9228": {
+            "countries": [
+                "Nicaragua"
+            ],
+            "population_share": 0.001,
+            "area_share": 0.007
+        },
+        "13243": {
+            "countries": [
+                "Belarus",
+                "Estonia",
+                "Latvia",
+                "Russia"
+            ],
+            "population_share": 0.006,
+            "area_share": 0.02
+        },
+        "9594": {
+            "countries": [
+                "Dominican Republic"
+            ],
+            "population_share": 0.001,
+            "area_share": 0.001
+        },
+        "13057": {
+            "countries": [
+                "Denmark",
+                "Poland",
+                "Sweden"
+            ],
+            "population_share": 0.003,
+            "area_share": 0.002
+        },
+        "11970": {
+            "countries": [
+                "Andorra",
+                "Spain",
+                "France"
+            ],
+            "population_share": 0.031,
+            "area_share": 0.028
+        },
+        "7834": {
+            "countries": [
+                "Gabon"
+            ],
+            "population_share": 0.0,
+            "area_share": 0.002
+        },
+        "8506": {
+            "countries": [
+                "Costa Rica"
+            ],
+            "population_share": 0.0,
+            "area_share": 0.0
+        },
+        "13776": {
+            "countries": [
+                "Norway",
+                "Sweden"
+            ],
+            "population_share": 0.0,
+            "area_share": 0.017
+        },
+        "11997": {
+            "countries": [
+                "Kazakhstan",
+                "Turkmenistan",
+                "Uzbekistan"
+            ],
+            "population_share": 0.0,
+            "area_share": 0.027
+        }
+    }
+}

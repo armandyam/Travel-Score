@@ -62,96 +62,94 @@ border-radius: 15px; padding:0px 10px; font-family: Muli; font-weight:normal; fo
 <script src="https://d3js.org/queue.v1.min.js"></script>
 <script src="https://d3js.org/d3.geo.projection.v0.min.js" charset="utf-8"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-<script>
-var width = 1400,
-    height = 700;
+    <script>
+        var width = 1400,
+            height = 700;
 
-var svg = d3.select("#map").append("svg")
-    .attr("width", width)
-    .attr("height", height)
-    .attr("viewBox", "0 0 " + width + " " + height)
-    .attr("preserveAspectRatio", "xMidYMid meet");
+        var svg = d3.select("#map").append("svg")
+            .attr("width", width)
+            .attr("height", height)
+            .attr("viewBox", "0 0 " + width + " " + height)
+            .attr("preserveAspectRatio", "xMidYMid meet");
 
-var g = svg.append("g");
+        var g = svg.append("g");
 
-// create preloader
-g.append("svg:text")
-    .attr("x", width / 2)
-    .attr("y", height / 2 - 20)
-    .attr("class", "preloader")
-    .attr("text-anchor", "middle")
-    .text("MAP LOADING...");
+        // create preloader
+        g.append("svg:text")
+            .attr("x", width / 2)
+            .attr("y", height / 2 - 20)
+            .attr("class", "preloader")
+            .attr("text-anchor", "middle")
+            .text("MAP LOADING...");
 
-g.append("svg:text")
-    .attr("x", width / 2)
-    .attr("y", height / 2)
-    .attr("class", "preloader")
-    .attr("text-anchor", "middle")
-    .text("THIS MIGHT TAKE A FEW SECONDS");
+        g.append("svg:text")
+            .attr("x", width / 2)
+            .attr("y", height / 2)
+            .attr("class", "preloader")
+            .attr("text-anchor", "middle")
+            .text("THIS MIGHT TAKE A FEW SECONDS");
 
-var projection = d3.geo.naturalEarth()
-    .scale(250)
-    .translate([width / 2, height / 2]);
+        var projection = d3.geo.naturalEarth()
+            .scale(250)
+            .translate([width / 2, height / 2]);
 
-var path = d3.geo.path().projection(projection);
+        var path = d3.geo.path().projection(projection);
 
-var s = 1; //set initial zoom level
-var zoom_scale = 1; // register current zoom level in global namespace
+        var s = 1; //set initial zoom level
+        var zoom_scale = 1; // register current zoom level in global namespace
 
-var zoom = d3.behavior.zoom()
-    .scaleExtent([1, 5])
-    .on("zoom", function() {
-        var t = d3.event.translate,
-            s = d3.event.scale;
-        t[0] = Math.min(0, Math.max((s - 1) * -width, t[0]));
-        t[1] = Math.min(0, Math.max((s - 1) * -height, t[1]));
-        zoom.translate(t);
+        var zoom = d3.behavior.zoom()
+            .scaleExtent([1, 5])
+            .on("zoom", function() {
+                var t = d3.event.translate,
+                    s = d3.event.scale;
+                t[0] = Math.min(0, Math.max((s - 1) * -width, t[0]));
+                t[1] = Math.min(0, Math.max((s - 1) * -height, t[1]));
+                zoom.translate(t);
 
-        g.attr("transform", "translate(" + t + ")scale(" + s + ")");
-        g.selectAll(".land").style("stroke-width", 0.2 / s);
-        g.selectAll(".cells").style("stroke-width", 0.1 / s);
-    });
+                g.attr("transform", "translate(" + t + ")scale(" + s + ")");
+                g.selectAll(".land").style("stroke-width", 0.2 / s);
+                g.selectAll(".cells").style("stroke-width", 0.1 / s);
+            });
 
-var info_out = d3.select("#map")
-    .append("div")
-    .attr("id", "info_out")
-    .style("z-index", "100")
-    .style("position", "absolute");
+        var info_out = d3.select("#map")
+            .append("div")
+            .attr("id", "info_out")
+            .style("z-index", "100")
+            .style("position", "absolute");
 
-var info = d3.select("#map")
-    .append("div")
-    .attr("id", "info")
-    .style("z-index", "100")
-    .style("position", "absolute");
+        var info = d3.select("#map")
+            .append("div")
+            .attr("id", "info")
+            .style("z-index", "100")
+            .style("position", "absolute");
 
-var country = d3.map();
-var pop_share = d3.map();
-var area_share = d3.map();
+        var country = d3.map();
+        var pop_share = d3.map();
+        var area_share = d3.map();
 
-var cell_stroke_temp = 0.1; // Default stroke width
+        var cell_stroke_temp = 0.1; // Default stroke width
 
-var surface_visited = 0.00;
-var pop_visited = 0.00;
-var total_visited = 0.00;
-var countries_count = {};
+        queue()
+            .defer(d3.json, "data/background.json")
+            .defer(d3.json, "data/reference.json")
+            .defer(d3.json, "data/souvereignty.json")
+            .defer(d3.csv, "data/places.csv")
+            .defer(d3.csv, "data/data.csv", function(d) {
+                country.set(d.TARGET_FID, d.country);
+                pop_share.set(d.TARGET_FID, +d.Pop_share);
+                area_share.set(d.TARGET_FID, +d.Area_share);
+            })
+            .defer(d3.json, "output.json") // Load the output.json file
+            .await(ready);
 
-queue()
-    .defer(d3.json, "data/background.json")
-    .defer(d3.json, "data/reference.json")
-    .defer(d3.json, "data/souvereignty.json")
-    .defer(d3.csv, "data/places.csv")
-    .defer(d3.csv, "data/data.csv", function(d) {
-        country.set(d.TARGET_FID, d.country);
-        pop_share.set(d.TARGET_FID, d.Pop_share);
-        area_share.set(d.TARGET_FID, d.Area_share);
-    })
-    .await(ready);
-
-function ready(error, background, cells, land, places, data) {
+     function ready(error, background, cells, land, places, data, output) {
     if (error) {
         console.error("Error loading data:", error);
         return;
     }
+
+    console.log("Data loaded successfully");
 
     var cells = topojson.feature(cells, cells.objects.reference);
     var land = topojson.feature(land, land.objects.layer1);
@@ -168,276 +166,225 @@ function ready(error, background, cells, land, places, data) {
         .attr("d", path)
         .attr("class", "land");
 
-    var cellPaths = g.selectAll("path.cells")
+    var selectedCellIDs = new Set(output.selected_cells.map(String));
+
+    var total_population_share = 0;
+    var total_area_share = 0;
+    var visited_countries = new Set();
+
+    selectedCellIDs.forEach(function(cellID) {
+        var pop_share_value = pop_share.get(cellID) || 0;
+        var area_share_value = area_share.get(cellID) || 0;
+        var countries = country.get(cellID) ? country.get(cellID).split(",") : [];
+
+        total_population_share += pop_share_value;
+        total_area_share += area_share_value;
+        countries.forEach(function(c) {
+            if (c) visited_countries.add(c);
+        });
+
+    });
+
+    console.log("Total Population Share:", total_population_share);
+    console.log("Total Area Share:", total_area_share);
+    console.log("Visited Countries:", visited_countries);
+
+    // Update results in the SVG
+    calculate_result({
+        total_population_share: total_population_share,
+        total_area_share: total_area_share,
+        visited_countries: visited_countries.size
+    });
+
+    g.selectAll("path.cells")
         .data(cells.features)
         .enter().append("path")
         .attr("d", path)
         .attr("class", "cells")
-        .style("fill", "#ff9000")
-        .style("fill-opacity", 0)
+        .style("fill", function(d) {
+            return selectedCellIDs.has(String(d.id)) ? "#ff9000" : "none";
+        })
+        .style("fill-opacity", function(d) {
+            return selectedCellIDs.has(String(d.id)) ? 0.8 : 0;
+        })
         .style("stroke-width", cell_stroke_temp)
         .style("stroke", "#DDDDDD");
 
-    // Load travel data using callback
-d3.json('Data/travel_data.json', function(error, travelData) {
-    if (error) {
-        console.error("Error loading travel data:", error);
-        return;
-    }
-
-    var visitedCells = new Set();
-
-    travelData.forEach(function(d) {
-        console.log("Processing city:", d.City);
-        let lat = +d.Latitude;
-        let lon = +d.Longitude;
-        let countryName = d.Country; // Get country directly from travel data
-        if (isNaN(lat) || isNaN(lon)) {
-            console.error("Invalid lat/lon for city:", d.City, "lat:", lat, "lon:", lon);
-            return;
-        }
-		console.log("Lat long:", [lon, lat]);  // Debugging output
-        var point = projection([lon, lat]);
-        cells.features.forEach(function(cell) {
-            var polygon = cell.geometry.coordinates[0].map(projection);
-            if (isPointInPolygon(point, polygon)) {
-                visitedCells.add(cell.id);
-	            console.log("Geometry:", cell.geometry);
-	            console.log("Projection:", projection);
-
-                console.log("Visited cell ID:", cell.id);  // Debugging output
-                console.log("Point:", point);  // Debugging output
-                console.log("Polygon:", polygon);  // Debugging output
-                
-                var surface_this = parseFloat(area_share.get(cell.id));
-                var pop_this = parseFloat(pop_share.get(cell.id));
-
-                surface_visited += surface_this;
-                pop_visited += pop_this;
-
-                // Automatically add the country from the travel data
-                if (countryName !== "") {
-                    if (countries_count.hasOwnProperty(countryName)) {
-                        countries_count[countryName] += 1;
-                    } else {
-                        countries_count[countryName] = 1;
-                    }
-                }
-
-                g.selectAll(".cells")
-                    .filter(function(cd) { return cd.id === cell.id; })
-                    .style("fill-opacity", 0.8)
-                    .style("fill", "#ff9000");
-            }
-        });
-    });
-
-    console.log("Countries count:", countries_count);  // Debugging output
-    calculate_result(countries_count);
-});
     // Remove preloader when done
     g.selectAll(".preloader").remove();
 }
 
-function isPointInPolygon(point, polygon) {
-    var x = point[0], y = point[1];
-    var inside = false;
 
-    for (var i = 0, j = polygon.length - 1; i < polygon.length; j = i++) {
-        var xi = polygon[i][0], yi = polygon[i][1];
-        var xj = polygon[j][0], yj = polygon[j][1];
+        function calculate_result({total_population_share, total_area_share, visited_countries}) {
+            var total_visited = (total_population_share + total_area_share + (visited_countries / 1.97)) / 3;
 
-        var intersect = ((yi > y) != (yj > y))
-            && (x < (xj - xi) * (y - yi) / (yj - yi) + xi);
-        if (intersect) inside = !inside;
-    }
+            d3.select("#total_visited").text(total_visited.toFixed(2));
+            d3.select("#countries_visited").text(visited_countries + " / 197");
+            d3.select("#pop_visited").text(total_population_share.toFixed(2) + " %");
+            d3.select("#surface_visited").text(total_area_share.toFixed(2) + " %");
 
-    return inside;
-};
+            // console.log("Countries visited:", visited_countries);
+            // console.log("Total visited:", total_visited);
+            // console.log("Pop visited:", total_population_share);
+            // console.log("Surface visited:", total_area_share);
 
-function calculate_result(countries_count) {
-    Object.size = function(obj) {
-        var size = 0, key;
-        for (key in obj) {
-            if (obj.hasOwnProperty(key)) size++;
+            if (total_visited < 1) {
+                d3.selectAll(".star1, .star2, .star3, .star4, .star5").style("visibility", "hidden");
+            }
+            if (total_visited >= 1 && total_visited < 2) {
+                d3.selectAll(".star1").style("visibility", "visible");
+                d3.selectAll(".star2, .star3, .star4, .star5").style("visibility", "hidden");
+            }
+            if (total_visited >= 2 && total_visited < 4) {
+                d3.selectAll(".star1, .star2").style("visibility", "visible");
+                d3.selectAll(".star3, .star4, .star5").style("visibility", "hidden");
+            }
+            if (total_visited >= 4 && total_visited < 8) {
+                d3.selectAll(".star1, .star2, .star3").style("visibility", "visible");
+                d3.selectAll(".star4, .star5").style("visibility", "hidden");
+            }
+            if (total_visited >= 8 && total_visited < 16) {
+                d3.selectAll(".star1, .star2, .star3, .star4").style("visibility", "visible");
+                d3.selectAll(".star5").style("visibility", "hidden");
+            }
+            if (total_visited >= 16) {
+                d3.selectAll(".star1, .star2, .star3, .star4, .star5").style("visibility", "visible");
+            }
         }
-        return size;
-    };
-    var countries_visited = Object.size(countries_count);
-    surface_visited = Math.max(0, surface_visited);
-    total_visited = (pop_visited + surface_visited + (countries_visited / 1.97)) / 3;
-    total_visited = Math.max(0, total_visited);
-    pop_visited = Math.max(0, pop_visited);
 
-    d3.selectAll("#total_visited").text(total_visited.toFixed(2));
-    d3.selectAll("#countries_visited").text(countries_visited + " / 197");
-    d3.selectAll("#pop_visited").text(pop_visited.toFixed(2) + " %");
-    d3.selectAll("#surface_visited").text(surface_visited.toFixed(2) + " %");
+        // Add results window
+        svg.append("svg:rect")
+            .attr("x", 18)
+            .attr("y", 500)
+            .attr("class", "results")
+            .attr("width", 270)
+            .attr("height", 40)
+            .style("fill", "#FF9000")
+            .style("opacity", 0.9);
 
-    console.log("Countries visited:", countries_visited);  // Debugging output
-    console.log("Total visited:", total_visited);  // Debugging output
-    console.log("Pop visited:", pop_visited);  // Debugging output
-    console.log("Surface visited:", surface_visited);  // Debugging output
+        svg.append("svg:text")
+            .attr("x", 28)
+            .attr("y", 527)
+            .attr("class", "results head")
+            .attr("text-anchor", "start")
+            .text("TRAVEL SCORE")
+            .style("opacity", 0.9);
 
-    if (total_visited < 1) {
-        d3.selectAll(".star1, .star2, .star3, .star4, .star5").style("visibility", "hidden");
-    }
-    if (total_visited >= 1 && total_visited < 2) {
-        d3.selectAll(".star1").style("visibility", "visible");
-        d3.selectAll(".star2, .star3, .star4, .star5").style("visibility", "hidden");
-    }
-    if (total_visited >= 2 && total_visited < 4) {
-        d3.selectAll(".star1, .star2").style("visibility", "visible");
-        d3.selectAll(".star3, .star4, .star5").style("visibility", "hidden");
-    }
-    if (total_visited >= 4 && total_visited < 8) {
-        d3.selectAll(".star1, .star2, .star3").style("visibility", "visible");
-        d3.selectAll(".star4, .star5").style("visibility", "hidden");
-    }
-    if (total_visited >= 8 && total_visited < 16) {
-        d3.selectAll(".star1, .star2, .star3, .star4").style("visibility", "visible");
-        d3.selectAll(".star5").style("visibility", "hidden");
-    }
-    if (total_visited >= 16) {
-        d3.selectAll(".star1, .star2, .star3, .star4, .star5").style("visibility", "visible");
-    }
-}
+        svg.append("svg:text")
+            .attr("x", 278)
+            .attr("y", 527)
+            .attr("class", "results head")
+            .attr("id", "total_visited")
+            .attr("text-anchor", "end")
+            .text("0.00");
 
-// Add results window
-svg.append("svg:rect")
-    .attr("x", 18)
-    .attr("y", 500)
-    .attr("class", "results")
-    .attr("width", 270)
-    .attr("height", 40)
-    .style("fill", "#FF9000")
-    .style("opacity", 0.9);  
+        svg.append("svg:rect")
+            .attr("x", 18)
+            .attr("y", 540)
+            .attr("class", "results")
+            .attr("width", 270)
+            .attr("height", 70)
+            .style("fill", "white")
+            .style("opacity", 0.8);
 
-svg.append("svg:text")
-    .attr("x", 28)
-    .attr("y", 527)
-    .attr("class", "results head")
-    .attr("text-anchor", "start")
-    .text("TRAVEL SCORE")
-    .style("opacity", 0.9);
+        svg.append("svg:text")
+            .attr("x", 28)
+            .attr("y", 560)
+            .attr("class", "results category")
+            .text("Countries visited:");
 
-svg.append("svg:text")
-    .attr("x", 278)
-    .attr("y", 527)
-    .attr("class", "results head")
-    .attr("id", "total_visited")
-    .attr("text-anchor", "end")
-    .text("0.00");
+        svg.append("svg:text")
+            .attr("x", 28)
+            .attr("y", 580)
+            .attr("class", "results category")
+            .text("Share of the world's population: ");
 
-svg.append("svg:rect")
-    .attr("x", 18)
-    .attr("y", 540)
-    .attr("class", "results")
-    .attr("width", 270)
-    .attr("height", 70)
-    .style("fill", "white")
-    .style("opacity", 0.8);  
+        svg.append("svg:text")
+            .attr("x", 28)
+            .attr("y", 600)
+            .attr("class", "results category")
+            .text("Share of the earth's land surface:");
 
-svg.append("svg:text")
-    .attr("x", 28)
-    .attr("y", 560)
-    .attr("class", "results category")
-    .text("Countries visited:");
+        svg.append("svg:text")
+            .attr("x", 278)
+            .attr("y", 560)
+            .attr("class", "results counter")
+            .attr("id", "countries_visited")
+            .text("0 / 197");
 
-svg.append("svg:text")
-    .attr("x", 28)
-    .attr("y", 580)
-    .attr("class", "results category")
-    .text("Share of the world's population: ");
+        svg.append("svg:text")
+            .attr("x", 278)
+            .attr("y", 580)
+            .attr("class", "results counter")
+            .attr("id", "pop_visited")
+            .text("0.00 %");
 
-svg.append("svg:text")
-    .attr("x", 28)
-    .attr("y", 600)
-    .attr("class", "results category")
-    .text("Share of the earth's land surface:");
+        svg.append("svg:text")
+            .attr("x", 278)
+            .attr("y", 600)
+            .attr("class", "results counter")
+            .attr("id", "surface_visited")
+            .text("0.00 %");
 
-svg.append("svg:text")
-    .attr("x", 278)
-    .attr("y", 560)
-    .attr("class", "results counter")
-    .attr("id", "countries_visited")
-    .text("0 / 197");
+        // Add orange stars
+        for (var i = 0; i < 5; i++) {
+            svg.append("svg:image")
+                .attr("xlink:href", "./img/star_orange.png")
+                .attr("class", "star" + (i + 1))
+                .attr("width", 34)
+                .attr("height", 34)
+                .attr("x", 53 + i * 40)
+                .attr("y", 455)
+                .attr("pointer-events", "all")
+                .style("visibility", "hidden");
+        }
 
-svg.append("svg:text")
-    .attr("x", 278)
-    .attr("y", 580)
-    .attr("class", "results counter")
-    .attr("id", "pop_visited")
-    .text("0.00 %");
+        // Add 5 stars
+        svg.append("svg:image")
+            .attr("xlink:href", "./img/5stars.png")
+            .attr("width", 200)
+            .attr("height", 46)
+            .attr("x", 50)
+            .attr("y", 450)
+            .attr("pointer-events", "all");
 
-svg.append("svg:text")
-    .attr("x", 278)
-    .attr("y", 600)
-    .attr("class", "results counter")
-    .attr("id", "surface_visited")
-    .text("0.00 %");
+        // Info popup
+        svg.append("svg:image")
+            .attr("xlink:href", "./img/i.png")
+            .attr("width", 40)
+            .attr("height", 40)
+            .attr("x", 10)
+            .attr("y", 0)
+            .on("click", function(d) { return openinfo(d); })
+            .attr("pointer-events", "all")
+            .attr("cursor", "pointer");
 
-// Add orange stars
-for (var i = 0; i < 5; i++) {
-    svg.append("svg:image")
-        .attr("xlink:href", "./img/star_orange.png")
-        .attr("class", "star" + (i + 1))
-        .attr("width", 34)
-        .attr("height", 34)
-        .attr("x", 53 + i * 40)
-        .attr("y", 455)
-        .attr("pointer-events", "all")
-        .style("visibility", "hidden");
-}
+        // Mappable-Logo
+        svg.append("svg:text")
+            .attr("x", width / 2)
+            .attr("y", height - 5)
+            .attr("class", "logo")
+            .text("MAPPABLE.INFO")
+            .on("click", function() { window.open("http://mappable.info"); });
 
-// Add 5 stars
-svg.append("svg:image")
-    .attr("xlink:href", "./img/5stars.png")
-    .attr("width", 200)
-    .attr("height", 46)
-    .attr("x", 50)
-    .attr("y", 450)
-    .attr("pointer-events", "all");
+        // Text for Info popup
+        info.html("<h3 style='margin-top: 15px;'>how your travel score is calculated:</h3><p>Based on the grid cells you've selected, three numbers are calculated:</p><OL><LI>The percentage of the world's countries that you've visited<LI>The share of the world's population that lives in these areas<LI>The share of the earth's land surface that lies inside the selected grid cells</OL><p>The overall travel score is the mean of these three numbers. Of course this calculation method is kind of arbitrary. It's just my approach to measure how much of the world a person has seen.</p><h3>where the data comes from:</h3><p>State boundaries by Natural Earth (Tom Patterson, Nathaniel Vaughn Kelso & many others)<br>1:50m Cultural Vectors - 197 souvereign states, v. 2.0.0 (2012)  <A HREF='http://www.naturalearthdata.com/downloads/50m-cultural-vectors/'> link</A></p><p>Place labels by Natural Earth (Tom Patterson, Nathaniel Vaughn Kelso & many others)<br>1:110m Cultural Vectors - Populated places, v. 2.0.0 (2012)  <A HREF='http://www.naturalearthdata.com/downloads/110m-cultural-vectors/'>link</A></p><p>Population data by CIESIN at Columbia University<br>Population Count Grid Future Estimates, v3 (2010)  <A HREF='http://sedac.ciesin.columbia.edu/data/set/gpw-v3-population-count-future-estimates/data-download'>link</A></p><p>Land area data by CIESIN at Columbia University<br>Land and Geographic Unit Area Grids, v3 (1990, 1995, 2000, 2005, 2010, 2015)  <A HREF='http://sedac.ciesin.columbia.edu/data/set/gpw-v3-land-geographic-unit-area/data-download'>link</A></p><h3>about this project:</h3><p>This project was realized by PatrickStotz (<A HREF='https://twitter.com/PatrickStotz'>@PatrickStotz</A>).</p><p>I'm endlessly fascinated by maps, dataviz & urbanism, plus I love to travel! Having a large world map with pin needles hanging in our living room, I always wanted to build a modern, interactive version of this map.</p><p>If you're interested in the technical details behind this project take a look at the project description on <A HREF='http://mappable.info/projects/travel-score'>mappable.info</A></p><p>Want to get in touch with me, just contact me on <A HREF='https://twitter.com/PatrickStotz'>twitter</A> or at mappable(at)gmx.de</p><p>Please note, that this map is not optimised for Internet Explorer or older browsers in general. There might as well be problems on less powerful or mobile devices, as the visualizations takes heavy use of SVG in browser rendering.</p>").on("click", function(d) { return closeinfo(d); });
+        info_out.style("top", "0px").style("left", "0px").html("").on("click", function(d) { return closeinfo(d); });
 
-// Info popup
-svg.append("svg:image")
-    .attr("xlink:href", "./img/i.png")
-    .attr("width", 40)
-    .attr("height", 40)
-    .attr("x", 10)
-    .attr("y", 0)
-    .on("click", function(d) { return openinfo(d); })
-    .attr("pointer-events", "all")
-    .attr("cursor", "pointer");
+        // dynamic positioning of info popup
+        function openinfo(d) {
+            var w = window.innerWidth;
+            var h = window.innerHeight;
+            info.style("top", Math.max(0, (h - 595) / 2) + "px").style("left", ((w - 520) / 2) + "px").style("visibility", "visible");
+            info_out.style("visibility", "visible");
+            zoom_temp = d3.behavior.zoom(); // temporarily store current zoom behaviour 
+            zoom_active = false; // temporarily disable zoom & pan
+        }
 
-// Mappable-Logo
-svg.append("svg:text")
-    .attr("x", width / 2)
-    .attr("y", height - 5)
-    .attr("class", "logo")
-    .text("MAPPABLE.INFO")
-    .on("click", function() { window.open("http://mappable.info"); });
-
-// Text for Info popup
-info.html("<h3 style='margin-top: 15px;'>how your travel score is calculated:</h3><p>Based on the grid cells you've selected, three numbers are calculated:</p><OL><LI>The percentage of the world's countries that you've visited<LI>The share of the world's population that lives in these areas<LI>The share of the earth's land surface that lies inside the selected grid cells</OL><p>The overall travel score is the mean of these three numbers. Of course this calculation method is kind of arbitrary. It's just my approach to measure how much of the world a person has seen.</p><h3>where the data comes from:</h3><p>State boundaries by Natural Earth (Tom Patterson, Nathaniel Vaughn Kelso &amp; many others)<br>1:50m Cultural Vectors - 197 souvereign states, v. 2.0.0 (2012)  <A HREF='http://www.naturalearthdata.com/downloads/50m-cultural-vectors/'> link</A></p><p>Place labels by Natural Earth (Tom Patterson, Nathaniel Vaughn Kelso &amp; many others)<br>1:110m Cultural Vectors - Populated places, v. 2.0.0 (2012)  <A HREF='http://www.naturalearthdata.com/downloads/110m-cultural-vectors/'>link</A></p><p>Population data by CIESIN at Columbia University<br>Population Count Grid Future Estimates, v3 (2010)  <A HREF='http://sedac.ciesin.columbia.edu/data/set/gpw-v3-population-count-future-estimates/data-download'>link</A></p><p>Land area data by CIESIN at Columbia University<br>Land and Geographic Unit Area Grids, v3 (1990, 1995, 2000, 2005, 2010, 2015)  <A HREF='http://sedac.ciesin.columbia.edu/data/set/gpw-v3-land-geographic-unit-area/data-download'>link</A></p><h3>about this project:</h3><p>This project was realized by PatrickStotz (<A HREF='https://twitter.com/PatrickStotz'>@PatrickStotz</A>).</p><p>I'm endlessly fascinated by maps, dataviz &amp; urbanism, plus I love to travel! Having a large world map with pin needles hanging in our living room, I always wanted to build a modern, interactive version of this map.</p><p>If you're interested in the technical details behind this project take a look at the project description on <A HREF='http://mappable.info/projects/travel-score'>mappable.info</A></p><p>Want to get in touch with me, just contact me on <A HREF='https://twitter.com/PatrickStotz'>twitter</A> or at mappable(at)gmx.de</p><p>Please note, that this map is not optimised for Internet Explorer or older browsers in general. There might as well be problems on less powerful or mobile devices, as the visualizations takes heavy use of SVG in browser rendering.</p>").on("click", function(d) { return closeinfo(d); });
-info_out.style("top", "0px").style("left", "0px").html("").on("click", function(d) { return closeinfo(d); });
-
-// dynamic positioning of info popup
-function openinfo(d) {
-    var w = window.innerWidth;
-    var h = window.innerHeight;
-    info.style("top", Math.max(0, (h - 595) / 2) + "px").style("left", ((w - 520) / 2) + "px").style("visibility", "visible");
-    info_out.style("visibility", "visible");
-    zoom_temp = d3.behavior.zoom(); // temporarily store current zoom behaviour 
-    zoom_active = false; // temporarily disable zoom & pan
-}
-
-function closeinfo(d) {
-    info.style("visibility", "hidden");
-    info_out.style("visibility", "hidden");
-    zoom_active = true; // re-enable zoom & pan
-}
-</script>
-
-</script>
+        function closeinfo(d) {
+            info.style("visibility", "hidden");
+            info_out.style("visibility", "hidden");
+            zoom_active = true; // re-enable zoom & pan
+        }
+    </script>
 </body>
